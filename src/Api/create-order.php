@@ -52,7 +52,7 @@ if (!$amount || $amount <= 0) {
     exit;
 }
 
-$allowedCurrencies = ['EUR', 'GBP', 'USD', 'BGN', 'PLN', 'CZK', 'RON', 'SEK', 'NOK', 'DKK', 'CHF'];
+$allowedCurrencies = ['EUR', 'GBP', 'USD'];
 if (!in_array(strtoupper($currency), $allowedCurrencies)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'error' => 'Unsupported currency. Allowed: ' . implode(', ', $allowedCurrencies)]);

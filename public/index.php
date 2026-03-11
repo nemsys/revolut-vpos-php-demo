@@ -145,7 +145,10 @@ $publicKey = $config->get('public_key');
     </footer>
 
     <!-- Revolut Checkout SDK -->
-    <script src="https://unpkg.com/@revolut/checkout@1/umd/bundle.js"></script>
+    <?php
+    $embedHost = ($environment === 'prod') ? 'merchant.revolut.com' : 'sandbox-merchant.revolut.com';
+    ?>
+    <script src="https://<?= $embedHost ?>/embed.js"></script>
     <!-- App Configuration (injected from PHP) -->
     <script>
         const APP_CONFIG = {

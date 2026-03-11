@@ -109,7 +109,7 @@ test.describe('Revolut Virtual POS Demo', () => {
         await page.goto('/');
 
         // Check that the Revolut SDK script tag exists
-        const sdkScript = page.locator('script[src*="revolut/checkout"]');
+        const sdkScript = page.locator('script[src*="merchant.revolut.com/embed.js"]');
         await expect(sdkScript).toHaveCount(1);
     });
 
